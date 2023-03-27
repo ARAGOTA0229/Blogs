@@ -1,0 +1,264 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block content%}
+<style>
+    .icofont-eye-alt{
+        margin-left: 60%;
+    }
+    .a-author{
+        margin-left: 10px;
+        color: black;
+        font-family: sans-serif;
+    }
+</style>
+<section id="section-slider" class="fullwidthbanner-container text-white" aria-label="section-slider">
+    <div id="slider-revolution">
+        <ul>
+           {% for i in main1 %}
+                <li data-transition="fade" data-slotamount="10" data-masterspeed="300" data-thumb="">
+                    <!--  BACKGROUND IMAGE -->
+                    <img alt="" class="rev-slidebg" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" src="{{i.photo.url}}">
+                    <div class="tp-caption big-s1" data-x="0" data-y="230" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_in="y:100px;opacity:0;s:500;e:Power2.easeOut;" data-transform_out="opacity:0;y:-100;s:200;e:Power2.easeInOut;" data-start="500" data-splitin="none" data-splitout="none" data-responsive_offset="on">
+                        <h3 class="id-color">{{i.text1}}</h3>
+                    </div>
+                    <div class="tp-caption very-big-white" data-x="0" data-y="280" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_in="y:100px;opacity:0;s:500;e:Power2.easeOut;" data-transform_out="opacity:0;y:-100;s:400;e:Power2.easeInOut;" data-start="600" data-splitin="none" data-splitout="none" data-responsive_offset="on">
+                        <h1>{{i.text2}}</h1>
+                    </div>
+                    <div class="tp-caption" data-x="0" data-y="360" data-width="480" data-height="none" data-whitespace="wrap" data-transform_in="y:100px;opacity:0;s:500;e:Power2.easeOut;" data-transform_out="opacity:0;y:-100;s:600;e:Power2.easeInOut;" data-start="700">
+                        <p class="lead xs-hide">{{i.text3}}.</p>
+                    </div>
+                    <div class="tp-caption" data-x="0" data-y="450" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_in="y:100px;opacity:0;s:500;e:Power2.easeOut;" data-transform_out="opacity:0;y:-100;s:800;e:Power2.easeInOut;" data-start="800">
+                        <a class="btn-custom" href="features.html">Contact Us</a>
+                    </div>
+                </li>
+            {% endfor%}=
+        </ul>
+    </div>
+</section>
+            <!-- revolution slider close -->
+            <section class="pt40 pb40 bg-color text-light">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-8 mb-sm-30 text-lg-left text-sm-center">
+                            <h3 class="no-bottom">Now! Get a Free Counsultation for Your Case.</h3>
+                        </div>
+                        <div class="col-md-4 text-lg-right rtl-lg-left text-sm-center">
+                            <a href="#" class="btn-custom btn-black light">Make Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section-highlight" class="relative text-light" data-bgcolor="#111111">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <span class="p-title">Welcome</span><br>
+                            <h2>
+                               {{result.text1}}
+                            </h2>
+                            <div class="small-border sm-left"></div>
+                        </div>
+                        <div class="col-md-8">
+                            <p>{{result.text}}.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="spacer-double"></div>
+                </div>
+            </section>
+            <section class="no-top relative z1000">
+                <div class="container">
+                    <div class="row mt-100">
+                        {% for i in slider%}
+                            <div class="col-md-4 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
+                                <div class="mask rounded">
+                                    <div class="cover rounded">
+                                        <div class="c-inner">
+                                            <h3><i class="icofont-{{i.icon}}"></i><span>{{i.category}}</span></h3>
+                                            <p>{{i.text}}.</p>
+                                            <div class="spacer20"></div>
+                                            <a href="#" class="btn-custom capsule">Read more</a>
+                                        </div>
+                                    </div>
+                                    <img src="{{i.photo.url}}" alt="" class="img-responsive" />
+                                </div>
+                            </div>
+                        {% endfor%}
+                       
+                    </div>
+                </div>
+            </section>
+            <section data-bgcolor="#111111" class="text-light">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 offset-lg-7">
+                            <span class="p-title">Experiences</span><br>
+                            <h2>
+                                Let Our Experience<br>be Your Guide
+                            </h2>
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Our Attorneys</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Our Expertise</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Our Firm</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <p>Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.</p>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <p>Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</p>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <p>Est quis nulla laborum officia ad nisi ex nostrud culpa Lorem excepteur aliquip dolor aliqua irure ex. Nulla ut duis ipsum nisi elit fugiat commodo sunt reprehenderit laborum veniam eu veniam. Eiusmod minim exercitation fugiat irure ex labore incididunt do fugiat commodo aliquip sit id deserunt reprehenderit aliquip nostrud. Amet ex cupidatat excepteur aute veniam incididunt mollit cupidatat esse irure officia elit do ipsum ullamco Lorem.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container col-md-6 pull-right" data-bgimage="url({{photo1.image.url}}) center"></div>
+            </section>
+            
+            <section data-bgimage="url({% static 'images/background/2.jpg'%}) center" class="text-light" data-stellar-background-ratio=".2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span class="p-title">Fun facts</span><br>
+                            <h2>
+                                What we did?
+                            </h2>
+                            <div class="small-border sm-left"></div>
+                            <p>Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia.</p>
+                        </div>
+                        <div class="col-md-8 offset-md-1">
+                            <div class="row">
+                                {% for i in stat%}
+                                    <div class="col-lg-4 col-md-6 wow fadeInRight mb30" data-wow-delay="0s">
+                                        <div class="de_count">
+                                            <h3><span class="timer" data-to="{{i.number}}" data-speed="3000">0</span></h3>
+                                            <h5 class="id-color">{{i.text}}</h5>
+                                        </div>
+                                    </div>
+                                
+                                {%endfor%}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section aria-label="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>Our Lawyer Team</h2>
+                            <div class="small-border"></div>
+                        </div>
+                       {% for i in team%}
+                            <div class="col-lg-4 col-md-6 col-sm-6 mb30 wow fadeInRight" data-wow-delay=".6s">
+                                <div class="f-profile text-center">
+                                    <div class="fp-wrap f-invert">
+                                        <div class="fpw-overlay">
+                                            <div class="fpwo-wrap">
+                                                <div class="fpwow-icons">
+                                                    <a href="{{i.facebook}}"><i class="fa fa-facebook fa-lg"></i></a>
+                                                    <a href="{{i.telegram}}"><i class="fa fa-telegram fa-lg"></i></a>
+                                                    <a href="{{i.linkedn}}"><i class="fa fa-linkedin fa-lg"></i></a>
+                                                    <a href="{{i.insta}}"><i class="fa fa-instagram fa-lg"></i></a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fpw-overlay-btm"></div>
+                                        <img src="{{i.photo.url}}" class="fp-image img-fluid" alt="">
+                                    </div>
+                                    <h4>{{i.name}}</h4>
+                                    {{i.staff}}
+                                </div>
+                            </div>
+                        {% endfor%}
+                    </div>
+                </div>
+            </section>
+            <section aria-label="section" class="text-light" data-bgimage="url({% static 'images/background/3.jpg'%}) top" data-stellar-background-ratio=".2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center text-light">
+                                <h2>Testimonials</h2>
+                                <div class="small-border"></div>
+                            </div>
+                            <div class="owl-carousel owl-theme" id="testimonial-carousel">
+                                {% for i in commenting%}
+                                    <div class="item">
+                                        <div class="de_testi opt-2 review">
+                                            <blockquote>
+                                                <i class="fa fa-quote-left id-color"></i>
+                                                <h3>{{i.category}}</h3>
+                                                <p>{{i.text}}.</p>
+                                                <div class="de_testi_by"><span>{{i.name}}, Pixar Studio</span></div>
+                                                <a href="/comment/"><input type="button" value="Give Feedback"></a>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                {%endfor%}
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section aria-label="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <h2>Latest News</h2>
+                                <div class="small-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for i in blog%}
+                            <div class="col-lg-4 col-md-6 mb30">
+                                <div class="bloglist item">
+                                    <div class="post-content">
+                                        <div class="date-box">
+                                            <div class="m">{{i.created_date | date:"d" }}</div>
+                                            <div class="d">{{i.created_date | date:" F Y"}}</div>
+                                        </div>
+                                        <div class="post-image">
+                                            <img alt="" src="{{i.photo.url}}">
+                                        </div>
+                                        <div class="post-text">
+                                            <span class="p-tagline">Law Firm</span>
+                                            <h4><a href=""><a href="/blogdetail/{{i.id}}">{{i.title}}<span></span></a></h4>
+                                            <p>{{i.text|truncatechars:200}}.</p>
+                                            <span class="p-author">{{i.name}}</span>
+                                            <i class="icofont-eye-alt"></i>
+                                
+                                            <span class="a-author">{{i.views}}</span>
+
+                                            
+                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {%endfor%}
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+        <a href="#" id="back-to-top"></a>
+        <!-- footer begin -->
+       {% endblock content%}

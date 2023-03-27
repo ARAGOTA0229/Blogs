@@ -1,0 +1,99 @@
+{% extends 'base.html'%}
+{% load static%}
+{% block content%}
+     
+
+            <!-- section begin -->
+            <section id="subheader" class="text-light" data-stellar-background-ratio=".2" data-bgimage="url({% static 'images/background/subheader2.jpg' static %}) top">
+                <div class="center-y relative text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h1>Contact Us</h1>
+                                <p>Reputation. Respect. Result.</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            {% if messages %}
+                {% for i in messages%}
+                    <div class="alert alert-success" role="alert">
+                    {% autoescape off %}{{i}}{% endautoescape %}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                {% endfor%}
+            {% endif %}
+            <section aria-label="section">
+                <div class="container">
+                    <div class="row">   
+                        <div class="col-md-4">
+                            <img src="{{conpage.photo.url}}" alt="" class="img-fluid mb30">
+                            <h3>{{conpage.title}}</h3>
+                            <address class="s1">
+                                <span><i class="id-color fa fa-map-marker fa-lg"></i>{{conpage.address}}</span>
+                                <span><i class="id-color fa fa-phone fa-lg"></i>+{{conpage.phone}}</span>
+                                <span><i class="id-color fa fa-envelope-o fa-lg"></i><a href="mailto:contact@example.com">{{conpage.email}}</a></span>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section aria-label="section" class="text-light" data-bgcolor="#111111">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 mb-sm-30 text-center">
+                            <h3>Do you have any question?</h3>
+                            <form name="contactForm" id="contact_form" class="form-border" method="post" action="/message/">
+                                {%csrf_token%}
+                                <div class="field-set">
+                                    <input type="text"name="name" id="name" class="form-control" placeholder="Your Name" />
+                                </div>
+                                <div class="field-set">
+                                    <input type="text" name="email" id="email" class="form-control" placeholder="Your Email" />
+                                </div>
+                                <div class="field-set">
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone" />
+                                </div>
+                                <div class="field-set">
+                                    <textarea name="text" id="message" class="form-control" placeholder="Your Message"></textarea>
+                                </div>
+                                <div class="spacer-half"></div>
+                                <input type="submit" value="Send">
+                                <div id="mail_success" class="success">Your message has been sent successfully.</div>
+                                <div id="mail_fail" class="error">Sorry, error occured this time sending your message.</div>
+                            </form>
+                        </div>
+                        <div class="col-lg-4">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section data-bgimage="url({% static 'images/background/2.jpg' static %}) top" class="text-light">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4 col-md-12 wow fadeInRight" data-wow-delay=".2s">
+                            <div class="de_count ultra-big s2 border-light text-center">
+                                <h3 class="timer" data-to="20" data-speed="1000">{{con.number}}</h3>
+                                <span class="id-color">{{con.title2}}</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 p-lg-5  mb-sm-30 wow fadeInRight" data-wow-delay=".4s">
+                            <span class="p-title">{{con.name}}</span><br>
+                            <h2>{{con.title}}</h2>
+                        </div>
+                        <div class="col-lg-4 wow fadeInRight" data-wow-delay=".6s">
+                            <p>
+                               {{con.text}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+    {% endblock content%}
